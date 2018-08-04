@@ -1,7 +1,7 @@
 # Angular Number Formatter
 
-Number Formatter for [Angular](http://angular.io); formats the number into human readable format when in Thousands, Millions and Billions.
-* 307474 -> 307.5K
+Number Formatter for [Angular](http://angular.io); Transforms the number into human readable format when in Thousands, Millions and Billions.
+* 37474 -> 37.5K
 * 1222130 -> 1.2M
 * 12414770 -> 12.4M
 * 19121364128 -> 19.1B
@@ -45,8 +45,10 @@ Place the `ng-number-formatter` and pass the un-formatted number as an input to 
 <ng-number-formatter [ngNumber]="1222130"></ng-number-formatter>
 ```
 
+# Demo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1. 
+Thus, one can consume the Demo App with in the Repository and can understand the flow of how the Package Works.
 
 ## Development server
 
