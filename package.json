@@ -1,15 +1,27 @@
 {
   "name": "ng-number-formatter",
-  "version": "0.0.0",
+  "description": "Angular Number Formatter - formats the number into human readable format when in Thousands, Millions and Billions.",
+  "author": "Omer Kalim Ansari",
+  "version": "1.0.0",
+  "keywords": [
+    "Angular2",
+    "Angular4",
+    "Angular6",
+    "Angular",
+    "ng",
+    "number",
+    "formatter"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "packagr": "ng-packagr -p ng-package.json"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
@@ -40,6 +52,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^3.0.6",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
