@@ -22,7 +22,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgNumberFormatterModule } from 'ng-number-formatter.module';
+import { NgNumberFormatterModule } from 'ng-number-formatter';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ Place the `ng-number-formatter` and pass the un-formatted number as an input to 
 # Demo App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1. 
-Thus, one can consume the Demo App with in the Repository and can understand the flow of how the Package Works.
+Thus, one can consume the Demo App with in the Repository and can understand the flow of how this Package works.
 
 ## Development server
 
