@@ -1,7 +1,7 @@
 {
   "name": "ng-number-formatter",
   "description": "Angular Number Formatter - formats the number into human readable format when in Thousands, Millions and Billions.",
-  "author": "Omer Kalim Ansari",
+  "author": "Dynamic Remo",
   "version": "1.5.0",
   "keywords": [
     "Angular2",
