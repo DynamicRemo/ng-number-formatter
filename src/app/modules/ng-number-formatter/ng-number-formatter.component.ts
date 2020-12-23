@@ -3,26 +3,27 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ng-number-formatter',
   inputs: ['ngNumber'],
-  template: '<span>{{ngNumber}}</span>',
+  template: '<span>{{ngOutputNumber}}</span>',
 })
 export class NgNumberFormatterComponent implements OnInit {
   ngNumber: string;
+  ngOutputNumber: string;
 
   constructor() { }
 
   ngOnInit() {
     var incomingNumber = this.ngNumber;
-    this.ngNumber = this.nFormatter( Math.abs(parseInt(incomingNumber)), 1);
+    this.ngOutputNumber = this.nFormatter(Math.abs(parseInt(incomingNumber)));
   }
 
-  nFormatter(num, digits) {
+  nFormatter(num, digits = 1) {
     var si = [
       { value: 1E18, symbol: "E" },
       { value: 1E15, symbol: "P" },
       { value: 1E12, symbol: "T" },
-      { value: 1E9,  symbol: "B" },
-      { value: 1E6,  symbol: "M" },
-      { value: 1E3,  symbol: "K" }
+      { value: 1E9, symbol: "B" },
+      { value: 1E6, symbol: "M" },
+      { value: 1E3, symbol: "K" }
     ], rx = /\.0+$|(\.[0-9]*[1-9])0+$/, i;
     for (i = 0; i < si.length; i++) {
       if (num >= si[i].value) {
