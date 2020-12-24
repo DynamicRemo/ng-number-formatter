@@ -7,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NgNumberFormatterComponent implements OnInit {
-  ngNumber: string;
+  ngNumber: number | string;
   ngOutputNumber: string;
 
   constructor() { }
 
   ngOnInit() {
-    const incomingNumber = parseInt(this.ngNumber);
+    // to process both numbers and strings
+    const incomingString = this.ngNumber.toString();
+    const incomingNumber = parseInt(incomingString);
     if (isNaN(incomingNumber)) {
-      this.ngOutputNumber = (this.ngNumber).toString();
+      // if its not a number then return as it is!
+      this.ngOutputNumber = incomingString;
     } else {
+      // handling minus sign for negative numbers
       this.ngOutputNumber = (incomingNumber > 0) ? '' : '-';
       this.ngOutputNumber += this.nFormatter(Math.abs(incomingNumber));
     }
