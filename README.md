@@ -1,10 +1,15 @@
 # Angular Number Formatter
 
-Number Formatter for [Angular](http://angular.io); Transforms the number into human readable format when in Thousands, Millions and Billions.
-* 37474 -> 37.5K
-* 1222130 -> 1.2M
-* 12414770 -> 12.4M
-* 19121364128 -> 19.1B
+Number Formatter for [Angular](http://angular.io); Transforms the number into human readable formats ['', 'metrics-symbol', 'metrics-name', 'comma', 'emoji']. Integers, floating point numbers, negative and also numeric strings can be formatted as numerical Metrics Symbols, Comma separated and Emojified 🔢
+* 37474
+    - default: 37.5K
+    - metrics-symbol: 37.5K
+    - metrics-name: 37.5 thousands
+    - comma: 37,474
+    - emoji: 3️⃣7️⃣4️⃣7️⃣4️⃣
+* 1222130 -> 1.2M | 1.2 million | 1,222,130 | 1️⃣2️⃣2️⃣2️⃣1️⃣3️⃣0️⃣
+* 12414770 -> 12.4M | 12.4 million | 12,414,770 |  1️⃣2️⃣4️⃣1️⃣4️⃣7️⃣7️⃣0️⃣
+* 19121364128 -> 19.1B | 19.1 billion | 12,121,364,128 | 1️⃣9️⃣1️⃣2️⃣1️⃣3️⃣6️⃣4️⃣1️⃣2️⃣8️⃣
 
 # Installation
 ```js
@@ -43,16 +48,19 @@ Place the `ng-number-formatter` and pass the un-formatted number as an input to 
 
 ```html
 <ng-number-formatter [ngNumber]="1222130"></ng-number-formatter>
+<ng-number-formatter [ngNumber]="1222130" [ngFormat]="'metrics-symbol'"></ng-number-formatter>
+<ng-number-formatter [ngNumber]="1222130" [ngFormat]="'metrics-name'"></ng-number-formatter>
+<ng-number-formatter [ngNumber]="1222130" [ngFormat]="'comma'"></ng-number-formatter>
+<ng-number-formatter [ngNumber]="1222130" [ngFormat]="'emoji'"></ng-number-formatter>
 ```
 
 # Demo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1. 
-Thus, one can consume the Demo App with in the Repository and can understand the flow of how this Package works.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1 and works perfectly fine with the latest Angular Builds (last tested with the versions upto 11.0.5). You can consume the Demo App with in the Repository and can understand the flow of how this Package works.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Further details here in this ReadMe is to extend this project.
 
 ## Code scaffolding
 
