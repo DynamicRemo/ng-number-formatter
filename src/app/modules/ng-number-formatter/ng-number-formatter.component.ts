@@ -15,8 +15,8 @@ export class NgNumberFormatterComponent implements OnInit {
 
   ngOnInit() {
     // to process both numbers and strings
-    var incomingString = this.ngNumber.toString();
-    var incomingNumber = parseFloat(incomingString);
+    const incomingString = this.ngNumber.toString();
+    let incomingNumber = parseFloat(incomingString);
     if (isNaN(incomingNumber)) {
       // if its not a number then return as it is!
       this.ngOutputNumber = incomingString;
@@ -48,13 +48,13 @@ export class NgNumberFormatterComponent implements OnInit {
   }
 
   emojifyNumber(num) {
-    var emojifiedString = '';
-    var emojiArray = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
+    let emojifiedString = '';
+    const emojiArray = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
     if (num <= 10) {
       emojifiedString = emojiArray[num];
     } else {
-      var numString = num.toString();
-      for (var i = 0; i < numString.length; i++) {
+      const numString = num.toString();
+      for (let i = 0; i < numString.length; i++) {
         emojifiedString += isNaN(numString.charAt(i)) ? numString.charAt(i) : emojiArray[numString.charAt(i)];
       }
     }
@@ -63,7 +63,7 @@ export class NgNumberFormatterComponent implements OnInit {
   }
 
   beautifyNumber(num) {
-    var numString = num;
+    let numString = num;
     if (num > 0) {
       if (num % 10 == 1 && num != 11) numString = `${num}st`;
       if (num % 10 == 2 && num != 12) numString = `${num}nd`;
@@ -80,7 +80,7 @@ export class NgNumberFormatterComponent implements OnInit {
 
   numberWithMetricsName(num, digits = 1) {
     // https://en.wikipedia.org/wiki/Peta-
-    var si = [
+    const si = [
       { value: 1E24, symbol: " septillion" },
       { value: 1E21, symbol: " sextillion" },
       { value: 1E18, symbol: " quintillion" },
@@ -90,7 +90,7 @@ export class NgNumberFormatterComponent implements OnInit {
       { value: 1E6, symbol: " million" },
       { value: 1E3, symbol: " thousand" }
     ], rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-    for (var i = 0; i < si.length; i++) {
+    for (let i = 0; i < si.length; i++) {
       if (num >= si[i].value) {
         return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
       }
@@ -100,7 +100,7 @@ export class NgNumberFormatterComponent implements OnInit {
 
   numberWithMetricsSymbol(num, digits = 1) {
     // https://en.wikipedia.org/wiki/Peta-
-    var si = [
+    const si = [
       { value: 1E24, symbol: "Y" },
       { value: 1E21, symbol: "Z" },
       { value: 1E18, symbol: "E" },
@@ -110,7 +110,7 @@ export class NgNumberFormatterComponent implements OnInit {
       { value: 1E6, symbol: "M" },
       { value: 1E3, symbol: "K" }
     ], rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-    for (var i = 0; i < si.length; i++) {
+    for (let i = 0; i < si.length; i++) {
       if (num >= si[i].value) {
         return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
       }
